@@ -72,6 +72,9 @@ def send_pdf(dest_mail, message_content):
 
 
 def format_observation(raw_observation, variables):
+    """
+    On formate les données. Dans l'exemple, le saute de ligne sont remplacés par des balises
+    """
     result = []
     regex = re.compile("(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})")
     for variable in variables:
@@ -91,6 +94,7 @@ def format_observation(raw_observation, variables):
 
 if __name__ == "__main__":
 
+    # Assignation variable - label
     answer_variables = [
         {"code": "v1", "label": "Avez-vous des symptômes compatibles avec la COVID-19?"},
         {"code": "v2", "label": "Quelle est la situation de votre région?"},
