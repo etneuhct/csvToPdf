@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .variable {
+
+            margin-bottom: 40px;
+        }
+        .question{
+            width: 100%;
+            color: darkblue;
+            height: 100%;
+        }
+        .question1{
+            background-color: #C6E0B4;
+        }
+        .answer1{
+            background-color: #E2EFDA;
+        }
+        .question2{
+            background-color: #BDD7EE ;
+        }
+        .answer2{
+            background-color: #DDEBF7;
+        }
+        .answer{
+            width: 100%;
+            border-bottom: 2px solid black;
+            line-height: 1.5;
+        }
+        p {
+            font-size:25px;
+            margin: 0;
+            font-family: "Calibri";
+        }
+        #recommendation {
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            margin-bottom: 50px;
+        }
+        #last_update {
+            background-color: powderblue;
+            height: 30px;
+            margin-bottom: 50px;
+            color: black;
+        }
+    </style>
+</head>
+<body style="width: 1000px;">
+    <main style="padding-top: 500px">
+
+        <div id="recommendation">
+            <p style="font-weight: bold">Recommandations en lien avec vos réponses au questionnaire:</p>
+        </div>
+        {% for variable in variables %}
+            <div class="variable">
+                <div style="width: 100%">
+                    <div class="question {% if loop.index%2 == 0 %}question1{% else %}question2{% endif %}">
+                        <p>
+                            {{ variable['question'] }}
+                        </p>
+                    </div>
+                    <div class="answer {% if loop.index%2 == 0 %}answer1{% else %}answer2{% endif %}">
+                        <p style="text-align: justify">
+                            {{ variable['answer'] }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+</body>
+</html>
