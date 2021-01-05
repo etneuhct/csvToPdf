@@ -1,10 +1,10 @@
-# vigieCovid
+# csvToPdf
 
 ## Premiers pas
 a) Récupérer le dépôt
 ```bash
-git clone https://github.com/etneuhct/vigicovid
-cd vigicovid
+git clone https://github.com/etneuhct/csvToPdf
+cd csvToPdf
 ```
 
 b) Installer les dépendances
